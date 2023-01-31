@@ -14,6 +14,7 @@
 		0A9013282988FC8E00D96DB1 /* MyntToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A9013262988FC8E00D96DB1 /* MyntToDo.xcdatamodeld */; };
 		0A90132A2988FC8F00D96DB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A9013292988FC8F00D96DB1 /* Assets.xcassets */; };
 		0A90132D2988FC8F00D96DB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A90132B2988FC8F00D96DB1 /* LaunchScreen.storyboard */; };
+		9D5FEAD5AA4D7A22F7075133 /* Pods_MyntToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC57533413827AE7821DE6F /* Pods_MyntToDo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		0A9013292988FC8F00D96DB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A90132C2988FC8F00D96DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A90132E2988FC8F00D96DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BC57533413827AE7821DE6F /* Pods_MyntToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF902051EA14799E4984779B /* Pods-MyntToDo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntToDo.debug.xcconfig"; path = "Target Support Files/Pods-MyntToDo/Pods-MyntToDo.debug.xcconfig"; sourceTree = "<group>"; };
+		F635D9D9B6A626862B3B124A /* Pods-MyntToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntToDo.release.xcconfig"; path = "Target Support Files/Pods-MyntToDo/Pods-MyntToDo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5FEAD5AA4D7A22F7075133 /* Pods_MyntToDo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				0A90131C2988FC8E00D96DB1 /* MyntToDo */,
 				0A90131B2988FC8E00D96DB1 /* Products */,
+				86D0F0CBDA81ED04E61AB0C1 /* Pods */,
+				A54EF3A4C8BBEE8607DDF018 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,23 @@
 			path = MyntToDo;
 			sourceTree = "<group>";
 		};
+		86D0F0CBDA81ED04E61AB0C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF902051EA14799E4984779B /* Pods-MyntToDo.debug.xcconfig */,
+				F635D9D9B6A626862B3B124A /* Pods-MyntToDo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A54EF3A4C8BBEE8607DDF018 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BC57533413827AE7821DE6F /* Pods_MyntToDo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A9013312988FC8F00D96DB1 /* Build configuration list for PBXNativeTarget "MyntToDo" */;
 			buildPhases = (
+				92FF9A28435B797308A9B83F /* [CP] Check Pods Manifest.lock */,
 				0A9013162988FC8E00D96DB1 /* Sources */,
 				0A9013172988FC8E00D96DB1 /* Frameworks */,
 				0A9013182988FC8E00D96DB1 /* Resources */,
+				0A90133429890FB500D96DB1 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A90133429890FB500D96DB1 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		92FF9A28435B797308A9B83F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyntToDo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0A9013162988FC8E00D96DB1 /* Sources */ = {
@@ -286,6 +355,7 @@
 		};
 		0A9013322988FC8F00D96DB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF902051EA14799E4984779B /* Pods-MyntToDo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +383,7 @@
 		};
 		0A9013332988FC8F00D96DB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F635D9D9B6A626862B3B124A /* Pods-MyntToDo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
