@@ -18,6 +18,11 @@
 		0A90133A2989338200D96DB1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A9013392989338200D96DB1 /* FirebaseAnalytics */; };
 		0A90133C2989338200D96DB1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0A90133B2989338200D96DB1 /* FirebaseAuth */; };
 		0A90133E2989338200D96DB1 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A90133D2989338200D96DB1 /* FirebaseCrashlytics */; };
+		0A901341298962E600D96DB1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901340298962E600D96DB1 /* LoginVC.swift */; };
+		0A9013432989631400D96DB1 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9013422989631400D96DB1 /* SignUpVC.swift */; };
+		0A9013452989633700D96DB1 /* ToDoLIstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9013442989633700D96DB1 /* ToDoLIstVC.swift */; };
+		0A901348298963C100D96DB1 /* ToDoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901347298963C100D96DB1 /* ToDoItemVC.swift */; };
+		0A90134A29896D3F00D96DB1 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90134929896D3F00D96DB1 /* ToDoCell.swift */; };
 		E2DF0248C3CD5AB92A1A685F /* Pods_MyntToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +38,11 @@
 		0A90132C2988FC8F00D96DB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A90132E2988FC8F00D96DB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A90133529891DF800D96DB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A901340298962E600D96DB1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0A9013422989631400D96DB1 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		0A9013442989633700D96DB1 /* ToDoLIstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoLIstVC.swift; sourceTree = "<group>"; };
+		0A901347298963C100D96DB1 /* ToDoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemVC.swift; sourceTree = "<group>"; };
+		0A90134929896D3F00D96DB1 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		21F24C8ED008B14280569144 /* Pods-MyntToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntToDo.release.xcconfig"; path = "Target Support Files/Pods-MyntToDo/Pods-MyntToDo.release.xcconfig"; sourceTree = "<group>"; };
 		699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -73,6 +83,7 @@
 		0A90131C2988FC8E00D96DB1 /* MyntToDo */ = {
 			isa = PBXGroup;
 			children = (
+				0A9013462989635100D96DB1 /* ViewControllers */,
 				0A90131D2988FC8E00D96DB1 /* AppDelegate.swift */,
 				0A90131F2988FC8E00D96DB1 /* SceneDelegate.swift */,
 				0A9013212988FC8E00D96DB1 /* ViewController.swift */,
@@ -84,6 +95,26 @@
 				0A9013262988FC8E00D96DB1 /* MyntToDo.xcdatamodeld */,
 			);
 			path = MyntToDo;
+			sourceTree = "<group>";
+		};
+		0A9013462989635100D96DB1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A901340298962E600D96DB1 /* LoginVC.swift */,
+				0A9013422989631400D96DB1 /* SignUpVC.swift */,
+				0A90134B29896D6200D96DB1 /* ToDoLIst */,
+				0A901347298963C100D96DB1 /* ToDoItemVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0A90134B29896D6200D96DB1 /* ToDoLIst */ = {
+			isa = PBXGroup;
+			children = (
+				0A9013442989633700D96DB1 /* ToDoLIstVC.swift */,
+				0A90134929896D3F00D96DB1 /* ToDoCell.swift */,
+			);
+			path = ToDoLIst;
 			sourceTree = "<group>";
 		};
 		86D0F0CBDA81ED04E61AB0C1 /* Pods */ = {
@@ -249,9 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9013222988FC8E00D96DB1 /* ViewController.swift in Sources */,
+				0A901348298963C100D96DB1 /* ToDoItemVC.swift in Sources */,
 				0A90131E2988FC8E00D96DB1 /* AppDelegate.swift in Sources */,
 				0A9013202988FC8E00D96DB1 /* SceneDelegate.swift in Sources */,
 				0A9013282988FC8E00D96DB1 /* MyntToDo.xcdatamodeld in Sources */,
+				0A9013452989633700D96DB1 /* ToDoLIstVC.swift in Sources */,
+				0A9013432989631400D96DB1 /* SignUpVC.swift in Sources */,
+				0A90134A29896D3F00D96DB1 /* ToDoCell.swift in Sources */,
+				0A901341298962E600D96DB1 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
