@@ -7,5 +7,7 @@ target 'MyntToDo' do
 
   # Pods for MyntToDo
   pod 'SwiftLint'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end

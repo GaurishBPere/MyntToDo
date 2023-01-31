@@ -147,6 +147,7 @@
 				0A9013182988FC8E00D96DB1 /* Resources */,
 				0A90133429890FB500D96DB1 /* SwiftLint */,
 				0A90133F298935A700D96DB1 /* ShellScript */,
+				EF7E55974BC2DC1EF00A033A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,7 +188,7 @@
 			);
 			mainGroup = 0A9013112988FC8E00D96DB1;
 			packageReferences = (
-				0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
 			);
 			productRefGroup = 0A90131B2988FC8E00D96DB1 /* Products */;
 			projectDirPath = "";
@@ -270,6 +271,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF7E55974BC2DC1EF00A033A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyntToDo/Pods-MyntToDo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyntToDo/Pods-MyntToDo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyntToDo/Pods-MyntToDo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -511,7 +529,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -524,17 +542,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		0A9013392989338200D96DB1 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseAnalytics;
 		};
 		0A90133B2989338200D96DB1 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseAuth;
 		};
 		0A90133D2989338200D96DB1 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 0A9013382989338200D96DB1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
