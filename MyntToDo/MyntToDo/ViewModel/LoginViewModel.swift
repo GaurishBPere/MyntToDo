@@ -14,7 +14,7 @@ class LoginViewModel {
     let passwordSubject = PublishSubject<String>()
     let showUser = PublishSubject<User>()
     let showError = PublishSubject<String>()
-    let showSignup = PublishSubject<Void>()
+    let showSignUp = PublishSubject<Void>()
 
     var email: String?
     var password: String?

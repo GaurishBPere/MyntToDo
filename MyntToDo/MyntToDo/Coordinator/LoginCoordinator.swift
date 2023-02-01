@@ -13,6 +13,7 @@ class LoginCoordinator: Coordinator, StoryboardInitializable {
 
     var loginVC: LoginVC!
     var rootVC: UINavigationController!
+    var signUpCoordinator: SignUpCoordinator!
     
     let disposeBag = DisposeBag()
     
@@ -26,7 +27,7 @@ class LoginCoordinator: Coordinator, StoryboardInitializable {
             self?.showErrorAlert(with: $0)
         }.disposed(by: disposeBag)
         
-        viewModel.showSignup.subscribe { _ in
+        viewModel.showSignUp.subscribe { _ in
             self.showSignUp()
         }.disposed(by: disposeBag)
         
@@ -40,6 +41,10 @@ extension LoginCoordinator {
     }
     
     func showSignUp() {
+        signUpCoordinator = SignUpCoordinator()
+        signUpCoordinator.rootVC = rootVC
+        let signUpVC = signUpCoordinator.start()
+        self.rootVC.pushViewController(signUpVC, animated: true)
     }
 
 }

@@ -34,6 +34,8 @@
 		0A90135F298A57A200D96DB1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90135E298A57A200D96DB1 /* AppCoordinator.swift */; };
 		0A901361298A591C00D96DB1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901360298A591C00D96DB1 /* UIViewController+Extension.swift */; };
 		0A901364298A5C9800D96DB1 /* StoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901363298A5C9800D96DB1 /* StoryBoard+Extension.swift */; };
+		0A901366298A73BA00D96DB1 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901365298A73BA00D96DB1 /* SignUpViewModel.swift */; };
+		0A901368298A78AB00D96DB1 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901367298A78AB00D96DB1 /* SignUpCoordinator.swift */; };
 		E2DF0248C3CD5AB92A1A685F /* Pods_MyntToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		0A90135E298A57A200D96DB1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0A901360298A591C00D96DB1 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		0A901363298A5C9800D96DB1 /* StoryBoard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryBoard+Extension.swift"; sourceTree = "<group>"; };
+		0A901365298A73BA00D96DB1 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		0A901367298A78AB00D96DB1 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
 		21F24C8ED008B14280569144 /* Pods-MyntToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntToDo.release.xcconfig"; path = "Target Support Files/Pods-MyntToDo/Pods-MyntToDo.release.xcconfig"; sourceTree = "<group>"; };
 		699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,15 +109,17 @@
 		0A90131C2988FC8E00D96DB1 /* MyntToDo */ = {
 			isa = PBXGroup;
 			children = (
-				0A9013462989635100D96DB1 /* ViewControllers */,
 				0A90131D2988FC8E00D96DB1 /* AppDelegate.swift */,
 				0A90131F2988FC8E00D96DB1 /* SceneDelegate.swift */,
 				0A9013212988FC8E00D96DB1 /* ViewController.swift */,
 				0A90135E298A57A200D96DB1 /* AppCoordinator.swift */,
+				0A9013462989635100D96DB1 /* ViewControllers */,
+				0A901369298A823200D96DB1 /* ViewModel */,
+				0A90136A298A827700D96DB1 /* Coordinator */,
 				0A901362298A593D00D96DB1 /* Extensions */,
 				0A90135B298A506800D96DB1 /* Manager */,
-				0A901359298A2AF500D96DB1 /* Helper.swift */,
 				0A901350298A046100D96DB1 /* Model */,
+				0A901359298A2AF500D96DB1 /* Helper.swift */,
 				0A9013232988FC8E00D96DB1 /* Main.storyboard */,
 				0A9013292988FC8F00D96DB1 /* Assets.xcassets */,
 				0A90132B2988FC8F00D96DB1 /* LaunchScreen.storyboard */,
@@ -128,8 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				0A901340298962E600D96DB1 /* LoginVC.swift */,
-				0A901351298A06DA00D96DB1 /* LoginViewModel.swift */,
-				0A90135C298A570A00D96DB1 /* LoginCoordinator.swift */,
 				0A9013422989631400D96DB1 /* SignUpVC.swift */,
 				0A90134B29896D6200D96DB1 /* ToDoLIst */,
 				0A901347298963C100D96DB1 /* ToDoItemVC.swift */,
@@ -172,6 +176,24 @@
 				0A901363298A5C9800D96DB1 /* StoryBoard+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A901369298A823200D96DB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0A901351298A06DA00D96DB1 /* LoginViewModel.swift */,
+				0A901365298A73BA00D96DB1 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0A90136A298A827700D96DB1 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				0A90135C298A570A00D96DB1 /* LoginCoordinator.swift */,
+				0A901367298A78AB00D96DB1 /* SignUpCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		86D0F0CBDA81ED04E61AB0C1 /* Pods */ = {
@@ -367,10 +389,12 @@
 				0A901364298A5C9800D96DB1 /* StoryBoard+Extension.swift in Sources */,
 				0A90135A298A2AF500D96DB1 /* Helper.swift in Sources */,
 				0A901354298A08D400D96DB1 /* String+Extension.swift in Sources */,
+				0A901366298A73BA00D96DB1 /* SignUpViewModel.swift in Sources */,
 				0A9013452989633700D96DB1 /* ToDoLIstVC.swift in Sources */,
 				0A9013432989631400D96DB1 /* SignUpVC.swift in Sources */,
 				0A901352298A06DA00D96DB1 /* LoginViewModel.swift in Sources */,
 				0A90134A29896D3F00D96DB1 /* ToDoCell.swift in Sources */,
+				0A901368298A78AB00D96DB1 /* SignUpCoordinator.swift in Sources */,
 				0A901358298A2AD600D96DB1 /* StorageManager.swift in Sources */,
 				0A901341298962E600D96DB1 /* LoginVC.swift in Sources */,
 				0A90134F298A039C00D96DB1 /* User.swift in Sources */,

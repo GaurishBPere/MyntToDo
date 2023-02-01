@@ -20,7 +20,7 @@ class StorageManager {
         }
     }
     
-    func store(_ object: User,as fileName: String) {
+    func store(_ object: User, as fileName: String) {
         let url = getURL().appendingPathComponent(fileName, isDirectory: false)
         let encoder = JSONEncoder()
         do {

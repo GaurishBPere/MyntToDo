@@ -63,7 +63,7 @@ class LoginVC: UIViewController {
         
         signUpBtn.rx
             .tap
-            .bind(to: viewModel.showSignup)
+            .bind(to: viewModel.showSignUp)
             .disposed(by: disposeBag)
     }
 
