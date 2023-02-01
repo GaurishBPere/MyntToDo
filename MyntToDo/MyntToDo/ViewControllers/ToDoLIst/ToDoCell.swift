@@ -22,5 +22,10 @@ class ToDoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setupCell(_ toDo: ToDoItem) {
+        toDoTitleLbl.text = toDo.title
+        dateTimeLbl.text = "\(toDo.date)"
+    }
 
 }

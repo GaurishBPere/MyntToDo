@@ -18,4 +18,5 @@ protocol StoryboardInitializable {
 class AppConstants {
     static let userJson = "Users.json"
     static let loginErrorMsg = "Please enter valid email and password"
+    static let toDoListCellIdentifier = "ToDoCell"
 }

@@ -36,6 +36,12 @@
 		0A901364298A5C9800D96DB1 /* StoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901363298A5C9800D96DB1 /* StoryBoard+Extension.swift */; };
 		0A901366298A73BA00D96DB1 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901365298A73BA00D96DB1 /* SignUpViewModel.swift */; };
 		0A901368298A78AB00D96DB1 /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901367298A78AB00D96DB1 /* SignUpCoordinator.swift */; };
+		0A90136C298A873400D96DB1 /* ToDoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90136B298A873400D96DB1 /* ToDoListViewModel.swift */; };
+		0A90136E298A965E00D96DB1 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90136D298A965E00D96DB1 /* Date+Extension.swift */; };
+		0A901370298A978300D96DB1 /* ToDoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90136F298A978300D96DB1 /* ToDoListCoordinator.swift */; };
+		0A901372298A992D00D96DB1 /* ToDoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901371298A992D00D96DB1 /* ToDoCoordinator.swift */; };
+		0A901374298AA01900D96DB1 /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901373298AA01900D96DB1 /* ToDoViewModel.swift */; };
+		0A901376298AAAEE00D96DB1 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901375298AAAEE00D96DB1 /* UITextField+Extension.swift */; };
 		E2DF0248C3CD5AB92A1A685F /* Pods_MyntToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +75,12 @@
 		0A901363298A5C9800D96DB1 /* StoryBoard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoryBoard+Extension.swift"; sourceTree = "<group>"; };
 		0A901365298A73BA00D96DB1 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		0A901367298A78AB00D96DB1 /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		0A90136B298A873400D96DB1 /* ToDoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewModel.swift; sourceTree = "<group>"; };
+		0A90136D298A965E00D96DB1 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		0A90136F298A978300D96DB1 /* ToDoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListCoordinator.swift; sourceTree = "<group>"; };
+		0A901371298A992D00D96DB1 /* ToDoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCoordinator.swift; sourceTree = "<group>"; };
+		0A901373298AA01900D96DB1 /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
+		0A901375298AAAEE00D96DB1 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		21F24C8ED008B14280569144 /* Pods-MyntToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntToDo.release.xcconfig"; path = "Target Support Files/Pods-MyntToDo/Pods-MyntToDo.release.xcconfig"; sourceTree = "<group>"; };
 		699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -174,6 +186,8 @@
 				0A901353298A08D400D96DB1 /* String+Extension.swift */,
 				0A901360298A591C00D96DB1 /* UIViewController+Extension.swift */,
 				0A901363298A5C9800D96DB1 /* StoryBoard+Extension.swift */,
+				0A90136D298A965E00D96DB1 /* Date+Extension.swift */,
+				0A901375298AAAEE00D96DB1 /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,6 +197,8 @@
 			children = (
 				0A901351298A06DA00D96DB1 /* LoginViewModel.swift */,
 				0A901365298A73BA00D96DB1 /* SignUpViewModel.swift */,
+				0A90136B298A873400D96DB1 /* ToDoListViewModel.swift */,
+				0A901373298AA01900D96DB1 /* ToDoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -192,6 +208,8 @@
 			children = (
 				0A90135C298A570A00D96DB1 /* LoginCoordinator.swift */,
 				0A901367298A78AB00D96DB1 /* SignUpCoordinator.swift */,
+				0A90136F298A978300D96DB1 /* ToDoListCoordinator.swift */,
+				0A901371298A992D00D96DB1 /* ToDoCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -381,16 +399,22 @@
 				0A901348298963C100D96DB1 /* ToDoItemVC.swift in Sources */,
 				0A901356298A2A5D00D96DB1 /* UserManager.swift in Sources */,
 				0A90134D298A038000D96DB1 /* ToDoItem.swift in Sources */,
+				0A90136E298A965E00D96DB1 /* Date+Extension.swift in Sources */,
+				0A901370298A978300D96DB1 /* ToDoListCoordinator.swift in Sources */,
 				0A90131E2988FC8E00D96DB1 /* AppDelegate.swift in Sources */,
 				0A90135F298A57A200D96DB1 /* AppCoordinator.swift in Sources */,
+				0A901376298AAAEE00D96DB1 /* UITextField+Extension.swift in Sources */,
 				0A9013202988FC8E00D96DB1 /* SceneDelegate.swift in Sources */,
+				0A90136C298A873400D96DB1 /* ToDoListViewModel.swift in Sources */,
 				0A901361298A591C00D96DB1 /* UIViewController+Extension.swift in Sources */,
 				0A9013282988FC8E00D96DB1 /* MyntToDo.xcdatamodeld in Sources */,
 				0A901364298A5C9800D96DB1 /* StoryBoard+Extension.swift in Sources */,
 				0A90135A298A2AF500D96DB1 /* Helper.swift in Sources */,
 				0A901354298A08D400D96DB1 /* String+Extension.swift in Sources */,
+				0A901372298A992D00D96DB1 /* ToDoCoordinator.swift in Sources */,
 				0A901366298A73BA00D96DB1 /* SignUpViewModel.swift in Sources */,
 				0A9013452989633700D96DB1 /* ToDoLIstVC.swift in Sources */,
+				0A901374298AA01900D96DB1 /* ToDoViewModel.swift in Sources */,
 				0A9013432989631400D96DB1 /* SignUpVC.swift in Sources */,
 				0A901352298A06DA00D96DB1 /* LoginViewModel.swift in Sources */,
 				0A90134A29896D3F00D96DB1 /* ToDoCell.swift in Sources */,

@@ -6,26 +6,69 @@
 //
 
 import UIKit
+import RxSwift
 
 class ToDoLIstVC: UIViewController {
 
+    @IBOutlet weak var toDoListView: UITableView!
     @IBOutlet weak var loggedInUserLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var addToDoBtn: UIButton!
+    
+    var viewModel: ToDoListViewModel!
+    let disposeBag = DisposeBag()
+    let user = UserManager.shared.currentUser
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupData()
+        setupBinding()
+        setupNavigation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchToDoItems()
     }
-    */
+    
+    private func setupNavigation() {
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        let logoutBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logout))
+        self.navigationItem.leftBarButtonItem = logoutBarButtonItem
+    }
+    
+    @objc private func logout() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func setupData() {
+        loggedInUserLbl.text = user.name
+        dateLbl.text = Date.getCurrentDate()
+    }
+    
+    private func setupBinding() {
+        addToDoBtn.rx
+            .tap
+            .bind { [weak self] in
+                self?.viewModel.addToDoItem()
+            }.disposed(by: disposeBag)
+        
+        viewModel.toDoItems.bind(to: toDoListView.rx.items(cellIdentifier: AppConstants.toDoListCellIdentifier, cellType: ToDoCell.self)) { (row, item, cell) in
+            cell.setupCell(item)
+        }.disposed(by: disposeBag)
+        
+        toDoListView.rx.modelSelected(ToDoItem.self)
+            .subscribe { toDoItem in
+                self.viewModel.addToDoItem(toDo: toDoItem)
+            }.disposed(by: disposeBag)
+        
+        toDoListView.rx.itemDeleted
+            .subscribe { self.viewModel.deleteToDo(at: $0) }
+            .disposed(by: disposeBag)
+    }
+    
+    private func fetchToDoItems() {
+        viewModel.fetchToDoItems()
+    }
 
 }

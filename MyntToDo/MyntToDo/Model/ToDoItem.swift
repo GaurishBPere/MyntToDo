@@ -9,6 +9,7 @@ import Foundation
 
 struct ToDoItem: Codable {
 //    let id: String
-    let toDoTitle: String
-    let date: Date
+    let title: String
+    let date: String
+//    let time: String
 }
