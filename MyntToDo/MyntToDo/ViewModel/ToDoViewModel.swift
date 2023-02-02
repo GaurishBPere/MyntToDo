@@ -12,7 +12,6 @@ import RxCocoa
 class ToDoViewModel {
     
     let titleSubject = PublishSubject<String>()
-//    let roleSubject = PublishSubject<String>()
     let dateSubject = PublishSubject<String>()
     let showToDoList = PublishSubject<Void>()
     var toDoItem: ToDoItem?

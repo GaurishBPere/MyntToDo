@@ -40,12 +40,6 @@ func urlComponents(lat: String, long: String) -> String {
     return components.string ?? ""
 }
 
-func getDocumentsDirectory() -> URL {
-    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    let documentsDirectory = paths[0]
-    return documentsDirectory
-}
-
 func compassDirection(for heading: CLLocationDirection) -> String? {
     if heading < 0 { return nil }
 

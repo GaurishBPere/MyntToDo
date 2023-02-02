@@ -64,7 +64,7 @@ class ToDoLIstVC: UIViewController {
     }
     
     private func setupData() {
-        loggedInUserLbl.text = user.name
+        loggedInUserLbl.text = "Hi,\(user.name)"
         dateLbl.text = Date.getCurrentDate()
         weatherImageView.image = UIImage(named: weatherBannerImage())
     }

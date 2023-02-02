@@ -8,8 +8,6 @@
 import Foundation
 
 struct ToDoItem: Codable {
-//    let id: String
     let title: String
     let date: String
-//    let time: String
 }
