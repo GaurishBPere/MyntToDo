@@ -100,9 +100,12 @@ Simple ToDo app to maintain our day-to-day tasks or list
 
 ![Login Screen](https://user-images.githubusercontent.com/124017828/216334375-d4b37183-50ac-4f28-b45d-e8cbe5da475e.png)
 
+
 ![SignUp Screen](https://user-images.githubusercontent.com/124017828/216334454-3f48f238-b4fa-4477-a183-fcbd9b0d64b2.png)
 
-![Landing Page - To![Add Todo Screen](https://user-images.githubusercontent.com/124017828/216334577-452fe40a-d582-4ed8-b531-117bdbc98c01.png)
+
+![Landing Page - Todo List](https://user-images.githubusercontent.com/124017828/216335362-5e0838c3-7c30-4f69-b009-45b19faa0cd2.png)
+
 
 ![Add Todo Screen](https://user-images.githubusercontent.com/124017828/216335177-b7a1417e-bc9f-4913-bf98-c0e6e32964ca.png)
 
