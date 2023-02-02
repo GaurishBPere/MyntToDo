@@ -7,6 +7,8 @@
 
 import UIKit
 import RxSwift
+import RxCoreLocation
+import CoreLocation
 
 class ToDoLIstVC: UIViewController {
 
@@ -18,9 +20,11 @@ class ToDoLIstVC: UIViewController {
     var viewModel: ToDoListViewModel!
     let disposeBag = DisposeBag()
     let user = UserManager.shared.currentUser
+    let manager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocationManager()
         setupData()
         setupBinding()
         setupNavigation()
@@ -41,12 +45,26 @@ class ToDoLIstVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    private func setupLocationManager() {
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+    
     private func setupData() {
         loggedInUserLbl.text = user.name
         dateLbl.text = Date.getCurrentDate()
     }
     
     private func setupBinding() {
+        manager.rx
+         .didUpdateLocations
+         .subscribe(onNext: { _, locations in
+             guard !locations.isEmpty,
+                 let currentLocation = locations.last else { return }
+             self.viewModel.getWeatherData(lat: "\(currentLocation.coordinate.latitude)", long: "\(currentLocation.coordinate.longitude)")
+         })
+         .disposed(by: disposeBag)
+        
         addToDoBtn.rx
             .tap
             .bind { [weak self] in

@@ -42,6 +42,8 @@
 		0A901372298A992D00D96DB1 /* ToDoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901371298A992D00D96DB1 /* ToDoCoordinator.swift */; };
 		0A901374298AA01900D96DB1 /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901373298AA01900D96DB1 /* ToDoViewModel.swift */; };
 		0A901376298AAAEE00D96DB1 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901375298AAAEE00D96DB1 /* UITextField+Extension.swift */; };
+		0A901378298AC30100D96DB1 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901377298AC30100D96DB1 /* ServiceManager.swift */; };
+		0A90137A298AC52300D96DB1 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A901379298AC52300D96DB1 /* Weather.swift */; };
 		E2DF0248C3CD5AB92A1A685F /* Pods_MyntToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,8 @@
 		0A901371298A992D00D96DB1 /* ToDoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCoordinator.swift; sourceTree = "<group>"; };
 		0A901373298AA01900D96DB1 /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
 		0A901375298AAAEE00D96DB1 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		0A901377298AC30100D96DB1 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		0A901379298AC52300D96DB1 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		21F24C8ED008B14280569144 /* Pods-MyntToDo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyntToDo.release.xcconfig"; path = "Target Support Files/Pods-MyntToDo/Pods-MyntToDo.release.xcconfig"; sourceTree = "<group>"; };
 		699FEB21F67F51AA979F4271 /* Pods_MyntToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyntToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -167,6 +171,7 @@
 			children = (
 				0A90134C298A038000D96DB1 /* ToDoItem.swift */,
 				0A90134E298A039C00D96DB1 /* User.swift */,
+				0A901379298AC52300D96DB1 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 			children = (
 				0A901355298A2A5D00D96DB1 /* UserManager.swift */,
 				0A901357298A2AD600D96DB1 /* StorageManager.swift */,
+				0A901377298AC30100D96DB1 /* ServiceManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				0A9013222988FC8E00D96DB1 /* ViewController.swift in Sources */,
 				0A901348298963C100D96DB1 /* ToDoItemVC.swift in Sources */,
 				0A901356298A2A5D00D96DB1 /* UserManager.swift in Sources */,
+				0A90137A298AC52300D96DB1 /* Weather.swift in Sources */,
 				0A90134D298A038000D96DB1 /* ToDoItem.swift in Sources */,
 				0A90136E298A965E00D96DB1 /* Date+Extension.swift in Sources */,
 				0A901370298A978300D96DB1 /* ToDoListCoordinator.swift in Sources */,
@@ -407,6 +414,7 @@
 				0A9013202988FC8E00D96DB1 /* SceneDelegate.swift in Sources */,
 				0A90136C298A873400D96DB1 /* ToDoListViewModel.swift in Sources */,
 				0A901361298A591C00D96DB1 /* UIViewController+Extension.swift in Sources */,
+				0A901378298AC30100D96DB1 /* ServiceManager.swift in Sources */,
 				0A9013282988FC8E00D96DB1 /* MyntToDo.xcdatamodeld in Sources */,
 				0A901364298A5C9800D96DB1 /* StoryBoard+Extension.swift in Sources */,
 				0A90135A298A2AF500D96DB1 /* Helper.swift in Sources */,
@@ -497,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -551,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -578,6 +586,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,6 +617,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

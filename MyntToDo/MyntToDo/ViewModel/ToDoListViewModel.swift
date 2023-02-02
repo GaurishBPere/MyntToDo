@@ -29,4 +29,14 @@ class ToDoListViewModel {
         UserManager.shared.updateToDoItemList(list: list)
         toDoItems.onNext(list)
     }
+    
+    func getWeatherData(lat: String, long: String) {
+        
+        ServiceManager.shared.callService(urlString: urlComponents(lat: "\(lat)", long: "\(long)")) { (response: Weather) in
+            print(response)
+        } fail: {
+            print("error")
+        }
+
+    }
 }

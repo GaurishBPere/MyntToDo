@@ -14,6 +14,7 @@ class LoginCoordinator: Coordinator, StoryboardInitializable {
     var loginVC: LoginVC!
     var rootVC: UINavigationController!
     var signUpCoordinator: SignUpCoordinator!
+    var toDoListCoordinator: ToDoListCoordinator!
     
     let disposeBag = DisposeBag()
     
@@ -31,13 +32,17 @@ class LoginCoordinator: Coordinator, StoryboardInitializable {
             self.showSignUp()
         }.disposed(by: disposeBag)
         
+        viewModel.showUser.subscribe { [weak self] in
+            self?.showToDoList(user: $0)
+        }.disposed(by: disposeBag)
+        
         return loginVC
     }
 }
 
 extension LoginCoordinator {
     func showErrorAlert(with msg: String) {
-        loginVC.showAlert(title: "Log In", message: msg)
+        loginVC.showAlert(title: "Alert", message: msg)
     }
     
     func showSignUp() {
@@ -45,6 +50,13 @@ extension LoginCoordinator {
         signUpCoordinator.rootVC = rootVC
         let signUpVC = signUpCoordinator.start()
         self.rootVC.pushViewController(signUpVC, animated: true)
+    }
+    
+    func showToDoList(user: User) {
+        toDoListCoordinator = ToDoListCoordinator()
+        toDoListCoordinator.rootVC = rootVC
+        let toDoListVC = toDoListCoordinator.start() as! ToDoLIstVC
+        self.rootVC.pushViewController(toDoListVC, animated: true)
     }
 
 }

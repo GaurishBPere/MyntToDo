@@ -42,7 +42,7 @@ class ToDoViewModel {
             }
             
         } else {
-            list = list.filter { $0.title == toDoitemToSave.title || $0.date == toDoitemToSave.date }
+//            list = list.filter { $0.title == toDoitemToSave.title || $0.date == toDoitemToSave.date }
             list.append(toDoitemToSave)
         }
         UserManager.shared.updateToDoItemList(list: list)

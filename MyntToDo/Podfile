@@ -9,5 +9,6 @@ target 'MyntToDo' do
   pod 'SwiftLint'
   pod 'RxSwift'
   pod 'RxCocoa'
-
+  pod 'RxCoreLocation'
+  
 end
