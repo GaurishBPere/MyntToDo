@@ -31,6 +31,7 @@ class ToDoViewModel {
         guard let toDoitemToSave = toDoitemToSave else {
             return
         }
+        
         var list = UserManager.shared.loggedInUserToDoList
         if let currentToDoItem = toDoItem {
             for index in 0..<list.count {
@@ -40,9 +41,7 @@ class ToDoViewModel {
                     break
                 }
             }
-            
         } else {
-//            list = list.filter { $0.title == toDoitemToSave.title || $0.date == toDoitemToSave.date }
             list.append(toDoitemToSave)
         }
         UserManager.shared.updateToDoItemList(list: list)

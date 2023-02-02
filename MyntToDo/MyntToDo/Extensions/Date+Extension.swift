@@ -11,7 +11,7 @@ extension Date {
 
  static func getCurrentDate() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         return dateFormatter.string(from: Date())
     }
 }
