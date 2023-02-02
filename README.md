@@ -12,6 +12,8 @@ Simple ToDo app to maintain our day-to-day tasks or list
 - Swift 5.0 
 - Minimum iOS version support 16.0
 - This app is supported on iPhones in Portrait mode
+- Install the Pods before running the app
+- For Firebase services we have used Swift Package Manager
 
 ## User details
 - Multi-User application.
@@ -93,3 +95,11 @@ Simple ToDo app to maintain our day-to-day tasks or list
 - Note* Firebase console will be accessible only once the permisiion is given to respective user.
 
 <img width="1429" alt="Screenshot 2023-02-02 at 5 35 54 PM" src="https://user-images.githubusercontent.com/124017828/216322529-bbcf4834-9ff6-40fe-a0d1-d0d27fde3757.png">
+
+## App Screenshots
+
+![Login Screen](https://user-images.githubusercontent.com/124017828/216334375-d4b37183-50ac-4f28-b45d-e8cbe5da475e.png)
+![SignUp Screen](https://user-images.githubusercontent.com/124017828/216334454-3f48f238-b4fa-4477-a183-fcbd9b0d64b2.png)
+![Landing Page - To![Add Todo Screen](https://user-images.githubusercontent.com/124017828/216334577-452fe40a-d582-4ed8-b531-117bdbc98c01.png)
+do List](https://user-images.githubusercontent.com/124017828/216334512-40ed3f37-f00a-4a7b-beaf-737383f5b9e6.png)
+
