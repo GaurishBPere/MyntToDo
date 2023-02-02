@@ -15,10 +15,11 @@ Simple ToDo app to maintain our day-to-day tasks or list
 - Install the Pods before running the app
 - For Firebase services we have used Swift Package Manager
 
-## User details
-- Multi-User application.
+## App details
 - User can create, edit and delete a ToDo with a time and date.
-- With updated weather info on the go.
+- App has weather widget on landing page with all weather details 
+- Weather widget's background changes as per day & night time
+- User can test crashlytics with button provided on right top of Login screen
 
 ## Project structure
 ### Under MyntTodo we have ->
