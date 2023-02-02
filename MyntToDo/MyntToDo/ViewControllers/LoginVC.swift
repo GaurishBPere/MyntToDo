@@ -66,6 +66,13 @@ class LoginVC: UIViewController {
             .tap
             .bind(to: viewModel.showSignUp)
             .disposed(by: disposeBag)
+        
+        testCrashlyticsBtn.rx
+            .tap
+            .bind { [weak self] in
+                self?.viewModel.crash()
+            }
+            .disposed(by: disposeBag)
     }
 
     /*

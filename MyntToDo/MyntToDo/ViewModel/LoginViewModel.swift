@@ -43,4 +43,12 @@ class LoginViewModel {
         }
     }
     
+    func crash() {
+        self.showError.onNext(AppConstants.crashlyticsMsg)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let numbers = [0]
+            let _ = numbers[1]
+        }
+    }
+    
 }
