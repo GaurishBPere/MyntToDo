@@ -81,5 +81,7 @@ func weatherBannerImage() -> String {
   return imageName
 }
 
-
-
+enum APIResult<T> {
+    case success(T)
+    case error(String)
+}

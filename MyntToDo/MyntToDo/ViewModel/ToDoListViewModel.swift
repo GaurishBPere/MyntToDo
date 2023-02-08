@@ -14,6 +14,10 @@ class ToDoListViewModel {
     let showToDo = PublishSubject<ToDoItem?>()
     let toDoItems = BehaviorSubject(value: [ToDoItem]())
     let showLogin = PublishSubject<Void>()
+    let showWeather = PublishSubject<APIResult<Weather>>()
+    
+    var weatherApiManager = WeatherApiManager(weatherApiManager: ServiceManager())
+    var mockWeatherApiManager = WeatherApiManager(weatherApiManager: MockServiceManager())
     
     func addToDoItem(toDo: ToDoItem? = nil) {
         showToDo.onNext(toDo)
@@ -29,5 +33,18 @@ class ToDoListViewModel {
         UserManager.shared.updateToDoItemList(list: list)
         toDoItems.onNext(list)
     }
+    
+    func loadWeatherData(urlString: String) -> Observable<APIResult<Weather>> {
+        return Observable<APIResult<Weather>>.create { observer -> Disposable in
 
+            self.weatherApiManager.serviceManaging.callService(urlString: urlString) { (response: Weather) in
+                observer.onNext(.success(response))
+                observer.onCompleted()
+            } fail: {
+                observer.onNext(.error("error"))
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+    }
 }

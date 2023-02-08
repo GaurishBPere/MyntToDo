@@ -74,15 +74,23 @@ class ToDoLIstVC: UIViewController {
         manager.delegate = nil
         manager.rx
             .didUpdateLocations
-            .subscribe(onNext: { _, locations in
+            .subscribe(onNext: { [self] _, locations in
                 guard !locations.isEmpty,
                       let currentLocation = locations.last else { return }
                 self.toggleElement(value: true)
-                ServiceManager.shared.callService(urlString: urlComponents(lat: "\(currentLocation.coordinate.latitude)", long: "\(currentLocation.coordinate.longitude)")) { (response: Weather) in
-                    self.updateWeatherWidget(response: response)
-                } fail: {
-                    print("error")
-                }
+                
+                viewModel.loadWeatherData(urlString: urlComponents(lat: currentLocation.latString(), long: currentLocation.longString())).subscribe(onNext: { response in
+                    switch response {
+                        case .success(let weatherData):
+                            self.updateWeatherWidget(response: weatherData)
+                            break
+                        case .error(let error):
+                            print("Received error: \(error)")
+                            break
+                    }
+                })
+                .disposed(by: disposeBag)
+                
             })
             .disposed(by: disposeBag)
         

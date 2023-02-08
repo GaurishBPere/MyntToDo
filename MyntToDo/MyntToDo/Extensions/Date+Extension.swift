@@ -14,4 +14,10 @@ extension Date {
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         return dateFormatter.string(from: Date())
     }
+    
+    static func getCurrentDateTime() -> String {
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "MMM yyyy HH:mm:ss"
+           return dateFormatter.string(from: Date())
+       }
 }
