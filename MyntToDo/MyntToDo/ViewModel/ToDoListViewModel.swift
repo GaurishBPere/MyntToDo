@@ -33,18 +33,4 @@ class ToDoListViewModel {
         UserManager.shared.updateToDoItemList(list: list)
         toDoItems.onNext(list)
     }
-    
-    func loadWeatherData(urlString: String) -> Observable<APIResult<Weather>> {
-        return Observable<APIResult<Weather>>.create { observer -> Disposable in
-
-            self.weatherApiManager.serviceManaging.callService(urlString: urlString) { (response: Weather) in
-                observer.onNext(.success(response))
-                observer.onCompleted()
-            } fail: {
-                observer.onNext(.error("error"))
-                observer.onCompleted()
-            }
-            return Disposables.create()
-        }
-    }
 }

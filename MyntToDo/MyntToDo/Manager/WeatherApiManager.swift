@@ -9,10 +9,14 @@ import Foundation
 import RxSwift
 
 class WeatherApiManager {
-    var serviceManaging: ServiceManaging
-    
-    internal init(weatherApiManager: ServiceManaging) {
-        self.serviceManaging = weatherApiManager
+    private let weatherService: WeatherServiceProtocol
+
+    init(weatherApiManager: WeatherServiceProtocol) {
+        self.weatherService = weatherApiManager
     }
     
+    func fetchWeatherApi(urlString: String) -> Observable<Weather> {
+        return weatherService.fetchWeatherData(urlString: urlString)        
+    }
+
 }

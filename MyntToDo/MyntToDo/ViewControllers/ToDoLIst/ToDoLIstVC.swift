@@ -30,6 +30,8 @@ class ToDoLIstVC: UIViewController {
     }()
     
     var viewModel: ToDoListViewModel!
+    var weatherApiManager = WeatherApiManager(weatherApiManager: ServiceManager())
+//    var weatherApiManager = WeatherApiManager(weatherApiManager: MockServiceManager())
     let disposeBag = DisposeBag()
     let user = UserManager.shared.currentUser
     let manager = CLLocationManager()
@@ -79,18 +81,10 @@ class ToDoLIstVC: UIViewController {
                       let currentLocation = locations.last else { return }
                 self.toggleElement(value: true)
                 
-                viewModel.loadWeatherData(urlString: urlComponents(lat: currentLocation.latString(), long: currentLocation.longString())).subscribe(onNext: { response in
-                    switch response {
-                        case .success(let weatherData):
-                            self.updateWeatherWidget(response: weatherData)
-                            break
-                        case .error(let error):
-                            print("Received error: \(error)")
-                            break
-                    }
+                weatherApiManager.fetchWeatherApi(urlString: urlComponents(lat: currentLocation.latString(), long: currentLocation.longString())).subscribe(onNext: { weatherData in
+                    self.updateWeatherWidget(response: weatherData)
                 })
                 .disposed(by: disposeBag)
-                
             })
             .disposed(by: disposeBag)
         
